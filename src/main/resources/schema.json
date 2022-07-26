@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "orderId": {
+      "type": "integer"
+    },
+    "orderedItem": {
+      "type": "object",
+      "properties": {
+        "productType": {
+          "type": "string"
+        },
+        "itemId": {
+          "type": "integer"
+        },
+        "quantity": {
+          "type": "integer"
+        },
+        "price": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "productType",
+        "itemId",
+        "quantity",
+        "price"
+      ]
+    }
+  },
+  "required": [
+    "orderId",
+    "orderedItem"
+  ]
+}
