@@ -8,4 +8,5 @@ public class CommonConstants {
 	public final String PRODUCTTYPE_PLAN="PLAN";
 	public final String PRODUCTTYPE_DEVICE="DEVICE";
 	public final String TYPE="TYPE";
+	public final String EMPTY_STRING="";
 }

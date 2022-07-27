@@ -9,13 +9,11 @@ import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.amqp.support.converter.SimpleMessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.constants.CommonConstants;
 import com.example.demo.exception.JsonValidationException;
 import com.example.demo.rabbitmq.model.OrderDetail;
-import com.example.demo.utility.JsonValidatorUtility;
 import com.example.demo.utility.ObjectMapperUtility;
 
 @Service
@@ -40,7 +38,7 @@ public class RabbitMQSender {
 
 	public void send(String order) throws JsonValidationException {
 
-		//validateOrderImpl.validateOrderDetails(order);
+		validateOrderImpl.validateOrderDetails(order);
 		OrderDetail orderDetail = objectMapperUtility.getDetails(order);
 		
 		MessageProperties messageProperties = new MessageProperties();

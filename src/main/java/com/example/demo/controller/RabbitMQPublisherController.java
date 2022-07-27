@@ -23,16 +23,13 @@ public class RabbitMQPublisherController {
 
 	@Autowired
 	HttpServletRequest httpServletRequest;
-
-
-
 	@Autowired
 	ValidateOrderImpl validateOrderImpl;
 	@Autowired
 	RabbitMQSender rabbitMQSender;
 
 	@PostMapping(path = "/order")
-	
+
 	public ResponseEntity<Object> createOrderRequest(@RequestBody(required = true) String order,
 			HttpServletRequest request) throws JsonValidationException {
 		rabbitMQSender.send(order);
